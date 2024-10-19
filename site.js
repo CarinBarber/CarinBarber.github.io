@@ -1,3 +1,6 @@
+localStorage.setItem("It's a secret to everybody.", "You got a Red Rupee!")
+
+
 const hours = new Date().getHours() // get the current hour
 const welcomeD = document.querySelector('#welcome')
 
