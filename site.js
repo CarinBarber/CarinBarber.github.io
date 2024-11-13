@@ -37,11 +37,21 @@ const showImages = () => {
     images.forEach((image, index) => {
         const imageIndex = (index + offset + urls.length) % urls.length
         image.src = urls[imageIndex]
-        setInterval(() => { currentImage++, 5000 })
     })
     }
     
-    showImages()
+    showImages() 
+
+    currentImage = 0
+    const cycle = setInterval(() =>  { 
+        showImages()
+        currentImage++ }, 5000)
+    
+
+    // function cycle(currentImage) {currentImage++}
+    // setInterval(() => {
+    //     cycle(currentImage++)}, 1000)
+    // showImages()
 
 const nextButton = document.querySelector('#next')
     nextButton.addEventListener('click', () => {
@@ -53,3 +63,8 @@ const prevButton = document.querySelector('#prev')
         currentImage--,
         showImages()
     }) 
+
+const toDos = document.querySelector('#todo-list')
+const newItem = document.querySelector('#new-todo').textContent
+const addButton = document.querySelector('button')
+
